@@ -1,0 +1,27 @@
+﻿<Controls:MetroWindow  x:Class="MyWPF.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:MyWPF"
+        mc:Ignorable="d"
+        ShowMaxRestoreButton="False"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        Title="用户登录" Height="300" Width="500">
+    <Grid Height="271" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+       
+        
+        <StatusBar Grid.Row="1">
+            <StatusBarItem>Login Window</StatusBarItem>
+            <!--<Separator Style="{StaticResource MetroStatusBarSeparator}" />-->
+        </StatusBar>
+    </Grid>
+</Controls:MetroWindow>
