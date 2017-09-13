@@ -17,8 +17,12 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-       
-        
+        <Canvas>
+            <TextBox Name="txtUserName" Controls:TextBoxHelper.Watermark="输入用户名" Text="{Binding Path=UserName}" Canvas.Top="141" Width="305" Canvas.Left="84" ></TextBox>
+            <Button Command="{Binding LoginCommand }" CommandParameter="{Binding ElementName=txtUserName, Path=Text}" Style="{StaticResource ResourceKey=SGButton}" Content="Login" Width="179" Height="27" Canvas.Left="147" Canvas.Top="201"></Button>
+        </Canvas>
+
+
         <StatusBar Grid.Row="1">
             <StatusBarItem>Login Window</StatusBarItem>
             <!--<Separator Style="{StaticResource MetroStatusBarSeparator}" />-->
