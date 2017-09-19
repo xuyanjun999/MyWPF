@@ -9,6 +9,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="打开">
+                <MenuItem Header="打开"></MenuItem>
+                <MenuItem Header="打开"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="打开"></MenuItem>
+        </Menu>
+
+        <TabControl Grid.Row="1" Controls:TabControlHelper.Underlined="TabItems">
+            <TabItem Header="item1">
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="测试"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="item2"></TabItem>
+            <TabItem Header="item3"></TabItem>
+            <TabItem Header="item4"></TabItem>
+            <TabItem Header="item5"></TabItem>
+        </TabControl>
     </Grid>
 </Controls:MetroWindow>

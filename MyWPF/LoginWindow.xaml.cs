@@ -1,8 +1,10 @@
-﻿using MahApps.Metro.Controls;
+﻿using AutoUpdaterDotNET;
+using MahApps.Metro.Controls;
 using MyWPF.Command;
 using MyWPF.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,7 @@ namespace MyWPF
         {
             InitializeComponent();
             Binding();
+            CheckUpdate();
         }
 
         public void Binding()
@@ -40,6 +43,22 @@ namespace MyWPF
             };
 
             this.DataContext = LoginViewModel;
+        }
+
+        public void CheckUpdate()
+        {
+            AutoUpdater.CurrentCulture = new CultureInfo("zh-CN");
+            AutoUpdater.LetUserSelectRemindLater = true;
+            AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Minutes;
+            AutoUpdater.RemindLaterAt = 1;
+            AutoUpdater.ReportErrors = true;
+            //System.Timers.Timer timer = new System.Timers.Timer { Interval = 2 * 60 * 1000 };
+        
+            //timer.Elapsed += delegate
+            //{
+                AutoUpdater.Start("http://localhost:10002/autoupdateTemplete.xml");
+            //};
+            //timer.Start();
         }
 
 
